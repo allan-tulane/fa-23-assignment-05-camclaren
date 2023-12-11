@@ -23,16 +23,24 @@ Combine work of `delete-min` and `insertion` function:
 total: O(|E|log_d(|V|)) + O((|V|d)log_d(|V|)) --> O((|V|d + |E|)log_d|V|)
 
 - **1d.**
+|V| = |E|^(1/ (1 + e))
 
+O(|E|^(1/ (1 + e))d + |E|) * log_d|E|^(1/ (1+e)) = O(|E|)
+log_d|E|^(1/ (1 + e)) = (1/ 1 + e) * log_d(|E|)
+(|E|^(1/ (1 + e))) d/(1 + e)log_d(|E|) = |E|
+|E|^(1/ (1 + e))d + |E| = |E|(1 + e)
+|E|^(1/ (1 + e))d = |E|(1 + e)
+|E|^(1/ (1 + e))d = |E|(1 + e) - |E|
+d = |E|e / |E|^(1/ (1 + e))
 
 - **2a.**
-APSP(i,j,k) = 1
+I don't fully understand this question
 
 - **2b.**
 The relationship between the two is that APSP(i,j,2) is the minimum of APSP(i,j,1) and APSP(i,2,1) + APSP(2,j,1)
 
 - **2c.**
-
+The optimal substructure property for APSP(i,j,k-1) and APSP(i,k,k-1) + APSP(k,j,k-1). This is due to the shortest path being from i to j using only vertices 0,1,...,k is the same as the shortest path using vertices 0,1,...,k-1.
 
 - **2d.**
 If we do top-down memoization, the number of distinct subproblems is n * n * n, where n is the number of vertices in the graph. Therefore, the work of the algorithm is O(n^3).

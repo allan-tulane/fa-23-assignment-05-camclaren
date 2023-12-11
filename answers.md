@@ -14,9 +14,13 @@ k + 1 <= log_d(nd - d + 1)
 k <= log_d(nd - d + 1) - 1
 
 - **1b.**
-
+The function `insert` would have a work of O(log_d(n)) while the `delete-min` function would have a work of O(d * log_d(n)).
 
 - **1c.**
+Combine work of `delete-min` and `insertion` function:
+`delete-min`: O(|E|log_d(|V|))
+`insertion`: O((|V|d)log_d(|V|))
+total: O(|E|log_d(|V|)) + O((|V|d)log_d(|V|)) --> O((|V|d + |E|)log_d|V|)
 
 - **1d.**
 

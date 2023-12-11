@@ -26,17 +26,21 @@ total: O(|E|log_d(|V|)) + O((|V|d)log_d(|V|)) --> O((|V|d + |E|)log_d|V|)
 
 
 - **2a.**
-
+APSP(i,j,k) = 1
 
 - **2b.**
-
+The relationship between the two is that APSP(i,j,2) is the minimum of APSP(i,j,1) and APSP(i,2,1) + APSP(2,j,1)
 
 - **2c.**
 
+
 - **2d.**
+If we do top-down memoization, the number of distinct subproblems is n * n * n, where n is the number of vertices in the graph. Therefore, the work of the algorithm is O(n^3).
 
 - **2e.**
+The work of the algorithm is O(n^3), and the work of Dijkstra is O(n^2 logb + nE) --> E = num edges in graph
 
+If the graph is dense, then the dynamic algorithm is better than Dijkstra's, but if the graph is sparse then vice versa is true.
 
 
 - **3a.**
